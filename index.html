@@ -1,0 +1,39 @@
+<body>
+    Hello!<br>
+    This is main page<br><br>
+
+    <form id="login-form">
+        <input type="text" placeholder="ID" name="username" id="username-field" class="login-form-field">
+        <input type="password" placeholder="Password" name="password" id="password-field" class="login-form-field">
+        <br>
+        <input type="submit" value="login" id="login-form-submit">
+        <input type="submit" value="register" id="register-form-submit">
+    </form>
+</body>
+
+
+<script>
+    const loginForm = document.getElementById("login-form")
+    const loginButton = document.getElementById("login-form-submit");
+    const registerButton = document.getElementById("register-form-submit");
+
+
+    loginButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    var loginlink = "login.php?username=" + username + "&password=" + password;
+    location.href=loginlink;
+    });
+
+    registerButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    var regilink = "regi.php?username=" + username + "&password=" + password;
+    location.href=regilink;
+    });
+
+</script>
